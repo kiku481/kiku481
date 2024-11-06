@@ -1,0 +1,223 @@
+*{
+    margin: 0;
+    padding: 1;
+}
+
+body{
+    display: grid;
+    grid-template-rows: 5% 5% 5% 5% 5% 5% 5%;
+    grid-template-columns: 15% 10% 10% 10% 10% 5% 5%;
+    /*grid-template-rows: repeat(7, 1fr);
+    grid-template-columns: repeat(7, 1fr);*/
+    grid-template-areas:
+        "a a b b c d d"
+        "a a e f c d d"
+        "g h h f c i j"
+        "g k l f c i j"
+        "g k l f m m m"
+        "o o p p m m m"
+        "o o p p q r r"
+}
+
+#a{
+    grid-area: a;
+    background-color: rgb(158, 251, 209);
+}
+
+
+
+#a img {
+    width: 100%;       /* 이미지를 div의 가로 크기에 맞게 조정 */
+    height: 100%;      /* 이미지를 div의 세로 크기에 맞게 조정 */
+    object-fit: cover; /* 이미지가 div를 꽉 채우되 비율을 유지하면서 잘림 */
+}
+
+
+#b{
+    grid-area: b;
+    background-color: pink;
+}
+
+#b img {
+    width: 100%; 
+    height: 100%;      
+    object-fit: cover;
+}
+
+#c{
+    grid-area: c;
+    background-color: green;
+}
+
+#c img {
+    width: 100%; 
+    height: 100%;      
+    object-fit: cover;
+}
+
+
+#d{
+    grid-area: d;
+    background-color: yellow;
+    display: 100%;
+}
+
+#d img {
+    width: 100%; 
+    height: 100%;      
+    object-fit: cover;
+}
+
+
+#e{
+    grid-area: e;
+    background-color: white;
+}
+
+#e img {
+    width: 100%; 
+    height: 100%;      
+    object-fit: cover;
+}
+
+#f{
+    grid-area: f;
+    background-color: red;
+}
+
+#f img {
+    width: 100%; 
+    height: 100%;      
+    object-fit: cover;
+}
+
+#g{
+    grid-area: g;
+    background-color: orange;
+}
+
+#g img {
+    width: 100%; 
+    height: 100%;      
+    object-fit: cover;
+}
+
+#h{
+    grid-area: h;
+    background-color: yellow;
+}
+
+#h img {
+    width: 100%; 
+    height: 100%;      
+    object-fit: cover;
+}
+
+
+#i{
+    grid-area: i;
+    background-color: rgb(89, 89, 66);
+}
+
+#i img {
+    width: 100%; 
+    height: 100%;      
+    object-fit: cover;
+}
+
+#j{
+    grid-area: j;
+    background-color: rgb(132, 0, 255);
+}
+
+#j img {
+    width: 100%; 
+    height: 100%;      
+    object-fit: cover;
+}
+
+#k{
+    grid-area: k;
+    background-color: rgb(0, 8, 255);
+}
+
+#k img {
+    width: 100%; 
+    height: 100%;      
+    object-fit: cover;
+}
+
+#l{
+    grid-area: l;
+    background-color: rgb(0, 255, 123);
+}
+
+#l img {
+    width: 100%; 
+    height: 100%;      
+    object-fit: cover;
+}
+
+
+#m{
+    grid-area: m;
+    background-color: rgb(81, 0, 255);
+}
+
+#m img {
+    width: 100%; 
+    height: 100%;      
+    object-fit: cover;
+}
+
+
+#o{
+    grid-area: o;
+    background-color: rgb(255, 0, 0);
+}
+
+#o img {
+    width: 100%; 
+    height: 100%;      
+    object-fit: cover;
+}
+
+
+#p{
+    grid-area: p;
+    background-color: rgb(0, 255, 30);
+}
+
+#p img {
+    width: 100%; 
+    height: 100%;      
+    object-fit: cover;
+}
+
+
+#q{
+    grid-area: q;
+    background-color: rgb(162, 152, 255);
+}
+
+#q img {
+    width: 100%; 
+    height: 100%;      
+    object-fit: cover;
+}
+
+#r{
+    grid-area: r;
+    background-color: rgb(52, 232, 73);
+}
+
+#r img {
+    width: 100%; 
+    height: 100%;   
+    object-fit: cover;   
+}
+
+
+
+/*집에 뒤지게 가고 싶다 ㅅㅂ/
+/*집에 가기/
