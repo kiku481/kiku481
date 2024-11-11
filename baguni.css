@@ -1,0 +1,80 @@
+/* 전체 컨테이너 (박스와 장바구니를 나란히 배치) */
+#container {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+/* 박스들 */
+#boxes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    flex-direction: column;
+}
+
+/* 각 박스 스타일 (진짜 사각형 박스) */
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: lightblue;
+    text-align: center;
+    line-height: 100px;
+    cursor: pointer;
+    border-radius: 10px;
+    position: relative;
+    margin-bottom: 15%;
+}
+
+.box:hover {
+    transform: scale(1.1);
+}
+
+/* 장바구니 */
+.cart {
+    margin-left: 30px;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    width: 300px;
+    min-height: 150px;
+    background-color: #f9f9f9;
+}
+
+/* 장바구니 아이템 */
+.cart-item {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+}
+
+/* 장바구니에 추가된 박스 */
+.cart-box {
+    width: 100px;
+    height: 100px;
+    background-color: lightgreen;
+    text-align: center;
+    line-height: 100px;
+    border-radius: 10px;
+    font-size: 16px;
+    margin-right: 10px; /* 박스와 숫자 사이 간격 */
+}
+
+.cart-box:hover {
+    transform: scale(1.1);
+}
+
+/* 숫자 스타일 (박스 옆에 위치) */
+.count {
+    font-weight: bold;
+    color: red;
+    font-size: 18px;
+    margin-right: 5px; /* 숫자와 "개" 사이 간격 */
+}
+
+/* "개" 글자 스타일 */
+.unit {
+    font-size: 16px;
+    color: black;
+}
+

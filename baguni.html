@@ -1,0 +1,97 @@
+<html>
+    <header>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>장바구니 예시</title>
+        <link rel="stylesheet" href="baguni.css">
+    </header>
+
+    <body>
+        <div id="container">
+            <div id="boxes">
+                <div class="box" data-id="김치">
+                    <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fshop1.phinf.naver.net%2F20240327_103%2F1711510583909hkp7C_PNG%2F112646426531743785_698619299.png&type=sc960_832" style="width:100px;height:100px;"/>
+                </div>
+                <div class="box" data-id="숙주">
+                    <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDA4MThfNjEg%2FMDAxNzIzOTY4NzE4MjQ4.mOGuqYT9_NOykRI67Rc7PRSIIroWtUB04h4Kx7B7Dy8g.jhMwZhzhhRbhPEcWr0ID23VDL8X9KVqeSydCguR8lOYg.JPEG%2F%25BC%25F7%25C1%25D65.jpg&type=sc960_832" style="width:100px;height:100px;"/>
+                </div>
+                <div class="box" data-id="귤">
+                    <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDA5MzBfMTgz%2FMDAxNzI3Njc4ODI0OTUz.DgXREUCbz9yWrxG8lbdTnTAu9HCFPBliCYg9kDPQH74g.5xzAa23NSxMaQCS0RCe4dH7ngVecotFelpQAzIUsrk0g.PNG%2Fimage.png&type=sc960_832" style="width:100px;height:100px;"/>
+                </div>
+                <div class="box" data-id="빙수">
+                    <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDA3MTNfMTU3%2FMDAxNzIwODM0Njk2ODgx.3kZGAiRgMM1wA2DueEI7rhJ5N7TAL434b_dV9IlljsYg.LHnYvHwM8akJkufLHpyBZE9FGH1M8BiNl5NyY3omM3wg.JPEG%2FIMG_8836.jpg&type=sc960_832" style="width:100px;height:100px;"/>
+                </div>
+            </div>
+    
+            <div class="cart">
+                <h2>장바구니</h2>
+                <div id="cart-items"></div>
+            </div>
+        </div>
+    
+        <script>
+            const boxes = document.querySelectorAll('.box');
+            const cartItems = document.getElementById('cart-items');
+    
+            // 박스를 클릭하면 장바구니에 아이템 추가
+            boxes.forEach(box => {
+                box.onclick = () => addToCart(box);
+            });
+    
+            // 장바구니에 아이템을 추가하는 함수
+            function addToCart(box) {
+                const boxId = box.dataset.id;
+    
+                // 장바구니에 이미 있는 아이템인지 확인
+                const existingItem = document.querySelector(`#cart-item-${boxId}`);
+                if (existingItem) {
+                    const countElement = existingItem.querySelector('.count');
+                    let count = parseInt(countElement.textContent);
+                    countElement.textContent = ++count; // 클릭 횟수 증가
+                } else {
+                    // 장바구니에 새로운 아이템 추가
+                    const cartItem = document.createElement('div');
+                    cartItem.classList.add('cart-item');
+                    cartItem.id = `cart-item-${boxId}`;
+    
+                    // 박스를 복사해서 장바구니에 추가
+                    const cartBox = document.createElement('div');
+                    cartBox.classList.add('cart-box');
+                    cartBox.textContent = `${boxId}`;
+    
+                    const countElement = document.createElement('span');
+                    countElement.classList.add('count');
+                    countElement.textContent = '1';
+    
+                    // 숫자 옆에 "개" 텍스트 추가
+                    const unitElement = document.createElement('span');
+                    unitElement.classList.add('unit');
+                    unitElement.textContent = '개';
+    
+                    // 박스 옆에 숫자와 "개" 표시
+                    cartItem.appendChild(cartBox);
+                    cartItem.appendChild(countElement);
+                    cartItem.appendChild(unitElement);
+                    cartItem.onclick = () => decreaseCount(boxId);
+    
+                    cartItems.appendChild(cartItem);
+                }
+            }
+    
+            // 장바구니에서 아이템의 개수를 줄이는 함수
+            function decreaseCount(id) {
+                const cartItem = document.getElementById(`cart-item-${id}`);
+                const countElement = cartItem.querySelector('.count');
+                let count = parseInt(countElement.textContent);
+    
+                if (count > 1) {
+                    countElement.textContent = --count; // 숫자 1 감소
+                } else {
+                    // 숫자가 0이 되면 아이템 제거
+                    cartItem.remove();
+                }
+            }
+        </script
+    </body>
+</html>
+    
